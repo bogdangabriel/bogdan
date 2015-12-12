@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class FructController {
   private List<Fruct> fructe = new ArrayList<Fruct>();
 	//int i=4;
-	//String nume="";
+	//String Denumire="";
   FructController() {
     Fruct p1 = new Fruct(1, "Capsuni");
     Fruct p2 = new Fruct(2, "Cirese");
@@ -32,9 +32,9 @@ public class FructController {
     return this.fructe;
   }
   
-  @RequestMapping(value="/Fruct/{nume}", method = RequestMethod.POST)
-  public ResponseEntity create(@PathVariable("nume") String nume) {
-		Fruct n=new Fruct( fructe.size() +1,nume);
+  @RequestMapping(value="/Fruct/{Denumire}", method = RequestMethod.POST)
+  public ResponseEntity create(@PathVariable("Denumire") String Denumire) {
+		Fruct n=new Fruct( fructe.size() +1,Denumire);
 		fructe.add(n);
 		
         return new ResponseEntity<Fruct>(n, new HttpHeaders(), HttpStatus.OK); 

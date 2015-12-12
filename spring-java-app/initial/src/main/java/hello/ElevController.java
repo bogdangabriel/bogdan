@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ElevController {
   private List<Elev> elevi = new ArrayList<Elev>();
 	//int i=4;
-	//String nume="";
+	//String Denumire="";
   ElevController() {
     Elev p1 = new Elev(1, "IOANA");
     Elev p2 = new Elev(2, "MARIA");
@@ -32,9 +32,9 @@ public class ElevController {
     return this.elevi;
   }
   
-  @RequestMapping(value="/Elev/{nume}", method = RequestMethod.POST)
-  public ResponseEntity create(@PathVariable("nume") String nume) {
-		Elev n=new Elev( elevi.size() +1,nume);
+  @RequestMapping(value="/Elev/{Denumire}", method = RequestMethod.POST)
+  public ResponseEntity create(@PathVariable("Denumire") String Denumire) {
+		Elev n=new Elev( elevi.size() +1,Denumire);
 		elevi.add(n);
 		
         return new ResponseEntity<Elev>(n, new HttpHeaders(), HttpStatus.OK); 
